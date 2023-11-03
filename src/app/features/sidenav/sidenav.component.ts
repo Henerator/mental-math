@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DeviceService } from '@core/device/device.service';
 import { Theme } from '@core/theme/theme.enum';
 import { ThemeService } from '@core/theme/theme.service';
 
@@ -8,12 +9,19 @@ import { ThemeService } from '@core/theme/theme.service';
   styleUrls: ['./sidenav.component.scss'],
 })
 export class SidenavComponent implements OnInit {
+  isMobile = false;
   theme!: Theme;
   themeEnum = Theme;
 
-  constructor(private themeService: ThemeService) {}
+  constructor(
+    private deviceService: DeviceService,
+    private themeService: ThemeService
+  ) {}
 
   ngOnInit(): void {
+    this.deviceService.isMobile$.subscribe(
+      (isMobile) => (this.isMobile = isMobile)
+    );
     this.themeService.themeChange$.subscribe((theme) => (this.theme = theme));
   }
 

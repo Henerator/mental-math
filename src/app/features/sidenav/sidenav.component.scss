@@ -46,4 +46,10 @@
   .sidenav {
     width: 100%;
   }
+
+  .controls-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px 12px 0 12px;
+  }
 }
