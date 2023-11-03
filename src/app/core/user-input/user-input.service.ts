@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { KeyboardService } from '@core/keyboard/keyboard.service';
 import { filter, map, merge, Observable, partition, tap } from 'rxjs';
-import { userInputRegex } from './regex.const';
+import { userInputCodeRegex, userInputKeyRegex } from './regex.const';
 
 @Injectable({
   providedIn: 'root',
@@ -29,16 +29,27 @@ export class UserInputService {
     ).pipe(map(() => userInput));
   }
 
+  listenControls(): Observable<string> {
+    return this.keyboardService.listen().pipe(
+      map((event) => event.code),
+      filter((code) => this.validateControls(code))
+    );
+  }
+
   private validateFloatNumberKey(key: string): boolean {
-    return userInputRegex.floatNumberKey.test(key);
+    return userInputKeyRegex.floatNumberKey.test(key);
   }
 
   private validateFloatNumber(key: string, userInput: string): boolean {
     const value = `${userInput}${key}`;
-    return userInputRegex.floatNumber.test(value);
+    return userInputKeyRegex.floatNumber.test(value);
   }
 
   private validateRemoveKey(key: string): boolean {
-    return userInputRegex.Backspace.test(key);
+    return userInputCodeRegex.backspace.test(key);
+  }
+
+  private validateControls(code: string): boolean {
+    return userInputCodeRegex.controls.test(code);
   }
 }

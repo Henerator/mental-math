@@ -9,13 +9,20 @@ import { KeyEvents } from './key-events.enum';
   providedIn: 'root',
 })
 export class KeyboardService {
+  private keyDownEvents$: Observable<KeyboardEvent>;
+
   constructor(
     @Inject(windowToken)
     private readonly window: Window
-  ) {}
+  ) {
+    this.keyDownEvents$ = fromEvent<KeyboardEvent>(
+      this.window,
+      KeyEvents.keydown
+    );
+  }
 
   listen(): Observable<KeyEvent> {
-    return fromEvent<KeyboardEvent>(this.window, KeyEvents.keydown).pipe(
+    return this.keyDownEvents$.pipe(
       map((event: KeyboardEvent) => {
         const { key, code } = event;
         return { key, code };

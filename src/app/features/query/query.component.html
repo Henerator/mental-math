@@ -1,1 +1,38 @@
-<div>12 + 34 = {{ userInput }}</div>
+<div class="queries-container">
+  <div
+    *ngIf="previousQuery?.task as task"
+    [ngClass]="{
+      query_error: previousQuery?.state === queryState.error,
+      query_success: previousQuery?.state === queryState.success
+    }"
+    class="query query_prev"
+  >
+    <ng-container
+      *ngTemplateOutlet="
+        queryContent;
+        context: { task: task, answer: task.userAnswer }
+      "
+    ></ng-container>
+  </div>
+
+  <div
+    *ngIf="query?.task as task"
+    [ngClass]="{ query_error: userError }"
+    class="query"
+  >
+    <ng-container
+      *ngTemplateOutlet="
+        queryContent;
+        context: { task: task, answer: userInput }
+      "
+    ></ng-container>
+  </div>
+</div>
+
+<ng-template #queryContent let-task="task" let-answer="answer">
+  <span>{{ task.a }}</span>
+  <span class="task__sign">{{ task.operation }}</span>
+  <span>{{ task.b }}</span>
+  <span class="task__sign">=</span>
+  <span>{{ answer }}</span>
+</ng-template>
