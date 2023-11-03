@@ -1,26 +1,27 @@
+@use "src/styles/device/device";
+
 :host {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
   font-family: "Mitr", sans-serif;
 }
 
 .queries-container {
+  flex-grow: 1;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 180px;
   width: 100%;
   font-size: 6vw;
 }
 
 .query {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: var(--color-text-light);
   transition: all 300ms ease;
   user-select: none;
@@ -78,4 +79,14 @@
   left: auto;
   bottom: auto;
   right: 12px;
+}
+
+.virtual-keyboard {
+  align-self: stretch;
+}
+
+@include device.for-mobile {
+  .queries-container {
+    font-size: 10vw;
+  }
 }

@@ -4,7 +4,8 @@ import {
   Component,
   OnInit,
 } from '@angular/core';
-import { KeyCode } from '@core/keyboard/key-code.enum';
+import { DeviceService } from '@core/device/device.service';
+import { Key } from '@core/keyboard/key.enum';
 import { RuleService } from '@core/rule/rule.service';
 import { Task } from '@core/task/task.interface';
 import { TaskService } from '@core/task/task.service';
@@ -22,6 +23,9 @@ import { Query } from './query.interface';
 export class QueryComponent implements OnInit {
   queryState = QueryState;
 
+  isMobile = false;
+  isDesktop = false;
+
   previousUserInput = '';
   userInput = '';
   userError = false;
@@ -36,15 +40,24 @@ export class QueryComponent implements OnInit {
   constructor(
     private changeDetector: ChangeDetectorRef,
     private userInputService: UserInputService,
+    private deviceService: DeviceService,
     private ruleService: RuleService,
     private taskService: TaskService
   ) {}
 
   ngOnInit(): void {
+    this.listenDeviceSize();
     this.listenRulesChange();
 
     this.fillInitialQuery();
     this.startQuery();
+  }
+  private listenDeviceSize(): void {
+    this.deviceService.isMobile$.subscribe((isMobile) => {
+      this.isMobile = isMobile;
+      this.isDesktop = !isMobile;
+      this.changeDetector.markForCheck();
+    });
   }
 
   private listenRulesChange(): void {
@@ -138,8 +151,8 @@ export class QueryComponent implements OnInit {
     this.constrolsSub?.unsubscribe();
     this.constrolsSub = this.userInputService
       .listenControls()
-      .subscribe((code) => {
-        if (code === KeyCode.Space) {
+      .subscribe((key) => {
+        if (key === Key.Skip) {
           this.skipQuery();
           this.changeDetector.markForCheck();
         }

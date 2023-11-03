@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { KeyboardService } from '@core/keyboard/keyboard.service';
 import { filter, map, merge, Observable, partition, tap } from 'rxjs';
 import { keyMap } from './key-map.const';
-import { userInputCodeRegex, userInputKeyRegex } from './regex.const';
+import { userInputKeyRegex } from './regex.const';
 
 @Injectable({
   providedIn: 'root',
@@ -35,8 +35,8 @@ export class UserInputService {
 
   listenControls(): Observable<string> {
     return this.keyboardService.listen().pipe(
-      map((event) => event.code),
-      filter((code) => this.validateControls(code))
+      map((event) => event.key),
+      filter((key) => this.validateControls(key))
     );
   }
 
@@ -53,8 +53,8 @@ export class UserInputService {
     return userInputKeyRegex.delete.test(key);
   }
 
-  private validateControls(code: string): boolean {
-    return userInputCodeRegex.controls.test(code);
+  private validateControls(key: string): boolean {
+    return userInputKeyRegex.controls.test(key);
   }
 
   private mapKey(key: string): string {

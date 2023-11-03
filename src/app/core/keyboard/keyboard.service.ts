@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@angular/core';
 import { windowToken } from '@core/window/window.token';
-import { fromEvent, map, Observable } from 'rxjs';
+import { fromEvent, map, merge, Observable, Subject } from 'rxjs';
 
 import { KeyEvent } from './key-event.interface';
 import { KeyEvents } from './key-events.enum';
@@ -10,6 +10,7 @@ import { KeyEvents } from './key-events.enum';
 })
 export class KeyboardService {
   private keyDownEvents$: Observable<KeyboardEvent>;
+  private customKeyEventSubject = new Subject<KeyEvent>();
 
   constructor(
     @Inject(windowToken)
@@ -22,11 +23,18 @@ export class KeyboardService {
   }
 
   listen(): Observable<KeyEvent> {
-    return this.keyDownEvents$.pipe(
-      map((event: KeyboardEvent) => {
-        const { key, code } = event;
-        return { key, code };
-      })
+    return merge(
+      this.keyDownEvents$.pipe(
+        map((event: KeyboardEvent) => {
+          const { key, code } = event;
+          return { key, code };
+        })
+      ),
+      this.customKeyEventSubject
     );
+  }
+
+  emitCustomEvent(event: KeyEvent): void {
+    this.customKeyEventSubject.next(event);
   }
 }

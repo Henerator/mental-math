@@ -1,3 +1,5 @@
+@use "src/styles/device/device";
+
 :host {
   display: flex;
   gap: 12px;
@@ -21,5 +23,12 @@
   &.rule-item_enabled {
     background-color: var(--color-surface-success);
     border-color: var(--color-success);
+  }
+}
+
+@include device.for-mobile {
+  :host {
+    gap: 8px;
+    font-size: 18px;
   }
 }

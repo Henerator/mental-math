@@ -12,6 +12,9 @@ html {
   --color-border-dark: #222;
 
   --color-scrollbar-thumb: #ddd;
+
+  --color-virtual-keyboard-key: #444;
+  --color-virtual-keyboard-key-dark: #333;
 }
 
 html.theme-light {
@@ -28,4 +31,7 @@ html.theme-light {
   --color-border-dark: #222;
 
   --color-scrollbar-thumb: #ddd;
+
+  --color-virtual-keyboard-key: #eee;
+  --color-virtual-keyboard-key-dark: #eee;
 }

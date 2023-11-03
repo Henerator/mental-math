@@ -42,6 +42,11 @@
   class="success-count"
 ></app-success-count>
 
-<div class="control-description">
+<div *ngIf="isDesktop" class="control-description">
   Press <span class="shortcut-key">Space</span> to skip
 </div>
+
+<app-virtual-keyboard
+  *ngIf="isMobile"
+  class="virtual-keyboard"
+></app-virtual-keyboard>

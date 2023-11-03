@@ -1,3 +1,5 @@
+@use "src/styles/device/device";
+
 .sidenav-container {
   position: absolute;
   inset: 0;
@@ -20,12 +22,13 @@
   top: 0;
   display: flex;
   flex-direction: column;
+  z-index: 1;
 }
 
 :host::ng-deep {
   .mat-drawer-inner-container {
     &::-webkit-scrollbar {
-      width: 10px;
+      width: 8px;
     }
 
     &::-webkit-scrollbar-track {
@@ -34,7 +37,13 @@
 
     &::-webkit-scrollbar-thumb {
       background-color: var(--color-scrollbar-thumb);
-      border-radius: 10px;
+      border-radius: 8px;
     }
+  }
+}
+
+@include device.for-mobile {
+  .sidenav {
+    width: 100%;
   }
 }

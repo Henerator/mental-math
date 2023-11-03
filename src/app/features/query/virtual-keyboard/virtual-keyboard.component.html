@@ -1,0 +1,15 @@
+<div class="number-keys">
+  <div *ngFor="let key of numberKeys" (click)="onKeyClick(key.key)" class="key">
+    {{ key.text }}
+  </div>
+</div>
+<div class="control-keys">
+  <div
+    *ngFor="let key of controlKeys"
+    (click)="onKeyClick(key.key)"
+    class="key"
+  >
+    <ng-container *ngIf="!key.isIcon">{{ key.text }}</ng-container>
+    <mat-icon *ngIf="key.isIcon">{{ key.text }}</mat-icon>
+  </div>
+</div>
