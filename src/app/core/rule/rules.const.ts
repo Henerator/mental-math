@@ -24,4 +24,8 @@ export const rules: Rule[] = [
   // division
   createRule(RuleName.DivAaA, TaskOperation.div, 1, 100, 2, 10),
   createRule(RuleName.DivAaaA, TaskOperation.div, 1, 1000, 2, 10),
+
+  // percent
+  createRule(RuleName.PercentAaAa, TaskOperation.percent, 1, 99, 1, 99),
+  createRule(RuleName.PercentAaAaa, TaskOperation.percent, 1, 99, 1, 999),
 ];

@@ -3,4 +3,6 @@ export enum TaskOperation {
   minus = '-',
   mul = 'x',
   div = '/',
+  percent = '%',
+  of = 'of',
 }

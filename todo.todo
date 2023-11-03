@@ -35,6 +35,12 @@ Rules list:
     ✔ division @done(23-01-03 18:41)
       ✔ xx / x @done(23-01-03 20:35)
       ✔ xxx / x @done(23-01-03 20:51)
+    ✔ percent @done(23-01-08 03:20)
+      ✔ xx% of xx @done(23-01-08 03:20)
+      ✔ xx% of xxx @done(23-01-08 03:20)
+    ☐ power
+      ☐ square
+      ☐ cube
   ✔ create rules list @done(23-01-03 17:17)
   ✔ enable rule @done(23-01-03 17:17)
   ✔ disable rule @done(23-01-03 17:17)
@@ -54,6 +60,9 @@ About:
 
 Google analytics:
   ✔ add google analytics @done(23-01-04 18:07)
+  ☐ events
+    ☐ open sidenav
+    ☐ skip task
 
 Icon:
   ✔ add application icon @done(23-01-04 19:56)

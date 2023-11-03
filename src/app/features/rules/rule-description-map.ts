@@ -106,4 +106,20 @@ export const ruleDescriptionMap = new Map<RuleName, RuleDescription>([
       operation: '÷',
     },
   ],
+  [
+    RuleName.PercentAaAa,
+    {
+      a: '99%',
+      b: '99',
+      operation: 'of',
+    },
+  ],
+  [
+    RuleName.PercentAaAaa,
+    {
+      a: '99%',
+      b: '999',
+      operation: 'of',
+    },
+  ],
 ]);
