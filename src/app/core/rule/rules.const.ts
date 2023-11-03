@@ -130,6 +130,22 @@ export const rules: Rule[] = [
     10
   ),
 
+  // square
+  createRule(RuleType.Power, RuleName.SquareAA, TaskOperation.pow, 2, 9, 2, 2),
+  createRule(
+    RuleType.Power,
+    RuleName.SquareAaA,
+    TaskOperation.pow,
+    2,
+    99,
+    2,
+    2
+  ),
+
+  // cube
+  createRule(RuleType.Power, RuleName.CubeAA, TaskOperation.pow, 2, 9, 3, 3),
+  createRule(RuleType.Power, RuleName.CubeAaA, TaskOperation.pow, 2, 99, 3, 3),
+
   // percent
   createRule(
     RuleType.Binary,
@@ -149,20 +165,4 @@ export const rules: Rule[] = [
     1,
     999
   ),
-
-  // square
-  createRule(RuleType.Power, RuleName.SquareAA, TaskOperation.pow, 2, 9, 2, 2),
-  createRule(
-    RuleType.Power,
-    RuleName.SquareAaA,
-    TaskOperation.pow,
-    2,
-    99,
-    2,
-    2
-  ),
-
-  // cube
-  createRule(RuleType.Power, RuleName.CubeAA, TaskOperation.pow, 2, 9, 3, 3),
-  createRule(RuleType.Power, RuleName.CubeAaA, TaskOperation.pow, 2, 99, 3, 3),
 ];
