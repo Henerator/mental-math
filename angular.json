@@ -29,6 +29,7 @@
               "src/sitemap.xml",
               "src/favicon.ico",
               "src/manifest.json",
+              "src/service-worker.js",
               "src/assets"
             ],
             "styles": [
@@ -95,6 +96,7 @@
               "src/sitemap.xml",
               "src/favicon.ico",
               "src/manifest.json",
+              "src/service-worker.js",
               "src/assets"
             ],
             "styles": [
