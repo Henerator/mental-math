@@ -2,16 +2,22 @@
   *ngFor="let group of ruleGroups; trackBy: trackRuleItemGroup"
   class="rule-group"
 >
-  <div
-    *ngFor="let item of group.rules; trackBy: trackRuleItem"
-    [ngClass]="{ 'rule-item_enabled': item.enabled }"
-    (click)="onRuleClick(item)"
-    class="rule-item"
-  >
-    <div class="rule-item__operator">{{ item.description.operation }}</div>
-    <div class="rule-item__ab">
-      <span class="rule-item__value">{{ item.description.a }}</span>
-      <span class="rule-item__value">{{ item.description.b }}</span>
+  <ng-container *ngFor="let item of group.rules; trackBy: trackRuleItem">
+    <div
+      [ngSwitch]="item.rule.type"
+      [ngClass]="{ 'rule-item_enabled': item.enabled }"
+      (click)="onRuleClick(item)"
+      class="rule-item"
+    >
+      <app-binary-rule
+        *ngSwitchCase="ruleType.Binary"
+        [ruleItem]="item"
+      ></app-binary-rule>
+
+      <app-power-rule
+        *ngSwitchCase="ruleType.Power"
+        [ruleItem]="item"
+      ></app-power-rule>
     </div>
-  </div>
+  </ng-container>
 </div>

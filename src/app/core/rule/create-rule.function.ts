@@ -1,6 +1,7 @@
 import { MathService } from '@core/math/math.service';
 import { TaskOperation } from '@core/task/task-operation.enum';
 import { RuleName } from './rule-name.enum';
+import { RuleType } from './rule-type.enum';
 import { Rule } from './rule.interface';
 
 type AnswerGetter = (a: number, b: number) => string;
@@ -14,6 +15,7 @@ const operationAnswerMap = new Map<TaskOperation, AnswerGetter>([
     TaskOperation.percent,
     (percent, a) => MathService.toFixedNoRounding((percent * a) / 100, 2),
   ],
+  [TaskOperation.pow, (a, b) => Math.pow(a, b).toString()],
 ]);
 
 interface OperandsGetter {
@@ -45,6 +47,7 @@ const operationGetterMap = new Map<TaskOperation, OperationGetter>([
 ]);
 
 export function createRule(
+  type: RuleType,
   name: RuleName,
   operation: TaskOperation,
   minA: number,
@@ -64,6 +67,7 @@ export function createRule(
     operationGetterMap.get(operation) || defaultOperationGetter;
 
   return {
+    type,
     name,
     operation,
     getTask: () => {
@@ -71,6 +75,7 @@ export function createRule(
       const b = MathService.getRandomInt(minB, maxB);
 
       return {
+        type,
         operation: operationGetter(operation),
         a: operandsGetter.getA(a),
         b: operandsGetter.getB(b),

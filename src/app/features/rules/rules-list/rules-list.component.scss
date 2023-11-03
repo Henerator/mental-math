@@ -21,9 +21,6 @@
 
 .rule-item {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 12px;
   color: var(--color-disabled);
   border-radius: 4px;
@@ -44,20 +41,6 @@
       box-shadow: 0 0 3px 0 var(--color-surface-success);
     }
   }
-}
-
-.rule-item__operator {
-  margin-right: 12px;
-}
-
-.rule-item__ab {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.rule-item__value {
-  text-align: right;
 }
 
 @include device.for-mobile {

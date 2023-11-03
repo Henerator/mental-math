@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { RuleType } from '@core/rule/rule-type.enum';
 import { RuleService } from '@core/rule/rule.service';
 import { TaskOperation } from '@core/task/task-operation.enum';
 import { ruleDescriptionMap } from '../rule-description-map';
@@ -12,6 +13,8 @@ import { RuleItem } from '../rule-item.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RulesListComponent implements OnInit {
+  ruleType = RuleType;
+
   ruleGroups: RuleItemGroup[] = [];
   ruleItems: RuleItem[] = [];
 

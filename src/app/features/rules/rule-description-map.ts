@@ -1,4 +1,5 @@
 import { RuleName } from '@core/rule/rule-name.enum';
+import { TaskOperation } from '@core/task/task-operation.enum';
 import { RuleDescription } from './rule-description.interface';
 
 export const ruleDescriptionMap = new Map<RuleName, RuleDescription>([
@@ -106,6 +107,8 @@ export const ruleDescriptionMap = new Map<RuleName, RuleDescription>([
       operation: '÷',
     },
   ],
+
+  // percent
   [
     RuleName.PercentAaAa,
     {
@@ -120,6 +123,42 @@ export const ruleDescriptionMap = new Map<RuleName, RuleDescription>([
       a: '99%',
       b: '999',
       operation: 'of',
+    },
+  ],
+
+  // square
+  [
+    RuleName.SquareAA,
+    {
+      a: '9',
+      b: '2',
+      operation: 'pow',
+    },
+  ],
+  [
+    RuleName.SquareAaA,
+    {
+      a: '99',
+      b: '2',
+      operation: 'pow',
+    },
+  ],
+
+  // cube
+  [
+    RuleName.CubeAA,
+    {
+      a: '9',
+      b: '3',
+      operation: 'pow',
+    },
+  ],
+  [
+    RuleName.CubeAaA,
+    {
+      a: '99',
+      b: '3',
+      operation: 'pow',
     },
   ],
 ]);

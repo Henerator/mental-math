@@ -38,9 +38,9 @@ Rules list:
     ✔ percent @done(23-01-08 03:20)
       ✔ xx% of xx @done(23-01-08 03:20)
       ✔ xx% of xxx @done(23-01-08 03:20)
-    ☐ power
-      ☐ square
-      ☐ cube
+    ✔ power @done(23-01-08 14:01)
+      ✔ square @done(23-01-08 14:01)
+      ✔ cube @done(23-01-08 14:01)
   ✔ create rules list @done(23-01-03 17:17)
   ✔ enable rule @done(23-01-03 17:17)
   ✔ disable rule @done(23-01-03 17:17)

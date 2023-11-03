@@ -5,4 +5,5 @@ export enum TaskOperation {
   div = '/',
   percent = '%',
   of = 'of',
+  pow = 'pow',
 }

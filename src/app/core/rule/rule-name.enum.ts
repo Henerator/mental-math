@@ -18,4 +18,10 @@ export enum RuleName {
 
   PercentAaAa = 'percent-aa-aa',
   PercentAaAaa = 'percent-aa-aaa',
+
+  SquareAA = 'square-a-a',
+  SquareAaA = 'square-aa-aa',
+
+  CubeAA = 'cube-a-a',
+  CubeAaA = 'cube-aa-aa',
 }

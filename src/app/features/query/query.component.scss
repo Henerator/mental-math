@@ -46,6 +46,16 @@
   margin: 0 0.3em;
 }
 
+.task-power__operand {
+  margin-right: 0.1em;
+}
+
+.task-power__pow {
+  position: relative;
+  bottom: 0.5em;
+  font-size: 0.4em;
+}
+
 .control-description {
   position: absolute;
   top: auto;

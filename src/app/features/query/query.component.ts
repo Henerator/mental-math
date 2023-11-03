@@ -6,6 +6,7 @@ import {
 } from '@angular/core';
 import { DeviceService } from '@core/device/device.service';
 import { Key } from '@core/keyboard/key.enum';
+import { RuleType } from '@core/rule/rule-type.enum';
 import { RuleService } from '@core/rule/rule.service';
 import { Task } from '@core/task/task.interface';
 import { TaskService } from '@core/task/task.service';
@@ -22,6 +23,7 @@ import { Query } from './query.interface';
 })
 export class QueryComponent implements OnInit {
   queryState = QueryState;
+  ruleType = RuleType;
 
   isMobile = false;
   isDesktop = false;

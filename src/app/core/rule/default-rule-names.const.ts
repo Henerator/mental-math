@@ -5,4 +5,5 @@ export const defaultRuleNames = [
   RuleName.MinusAaAa,
   RuleName.MulAaA,
   RuleName.DivAaA,
+  RuleName.SquareAA,
 ];

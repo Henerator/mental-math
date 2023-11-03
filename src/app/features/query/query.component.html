@@ -30,11 +30,22 @@
 </div>
 
 <ng-template #queryContent let-task="task" let-answer="answer">
-  <span>{{ task.a }}</span>
-  <span class="task__sign">{{ task.operation }}</span>
-  <span>{{ task.b }}</span>
-  <span class="task__sign">=</span>
-  <span>{{ answer }}</span>
+  <ng-container [ngSwitch]="task.type">
+    <ng-container *ngSwitchCase="ruleType.Binary">
+      <span>{{ task.a }}</span>
+      <span class="task__sign">{{ task.operation }}</span>
+      <span>{{ task.b }}</span>
+      <span class="task__sign">=</span>
+      <span>{{ answer }}</span>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="ruleType.Power">
+      <span class="task-power__operand">{{ task.a }}</span>
+      <sup class="task-power__pow">{{ task.b }}</sup>
+      <span class="task__sign">=</span>
+      <span>{{ answer }}</span>
+    </ng-container>
+  </ng-container>
 </ng-template>
 
 <app-success-count

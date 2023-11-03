@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rule-item__operator {
+  margin-right: 12px;
+}
+
+.rule-item__ab {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.rule-item__value {
+  text-align: right;
+}
