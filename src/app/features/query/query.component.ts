@@ -24,6 +24,7 @@ export class QueryComponent implements OnInit {
 
   userInput = '';
   userError = false;
+  successCount = 0;
 
   previousQuery: Query | null = null;
   query!: Query;
@@ -66,11 +67,13 @@ export class QueryComponent implements OnInit {
   }
 
   private handleSuccess(): void {
+    this.successCount++;
     this.fillNextQuery(QueryState.success);
     this.startQuery();
   }
 
   private handleError(): void {
+    this.successCount = 0;
     this.userError = true;
     this.startQuery();
   }
