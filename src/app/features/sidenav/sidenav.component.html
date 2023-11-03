@@ -4,14 +4,24 @@
   </mat-sidenav>
 
   <mat-sidenav-content class="page-content">
-    <button
-      mat-icon-button
-      aria-label="Open sidenav"
-      class="sidenav-open-button"
-      (click)="sidenav.open()"
-    >
-      <mat-icon>settings</mat-icon>
-    </button>
+    <div class="buttons-container">
+      <button
+        mat-icon-button
+        aria-label="Open sidenav"
+        (click)="sidenav.open()"
+      >
+        <mat-icon>settings</mat-icon>
+      </button>
+
+      <button
+        mat-icon-button
+        aria-label="Change theme"
+        (click)="onChangeThemeClick()"
+      >
+        <mat-icon *ngIf="theme === themeEnum.dark">wb_sunny</mat-icon>
+        <mat-icon *ngIf="theme === themeEnum.light">brightness_3</mat-icon>
+      </button>
+    </div>
 
     <ng-content></ng-content>
   </mat-sidenav-content>

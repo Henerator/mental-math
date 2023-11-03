@@ -13,13 +13,13 @@
   align-items: center;
   justify-content: center;
   padding: 12px;
-  color: #222;
-  border: 3px solid #222;
+  color: var(--color-text-dark);
+  border: 3px solid var(--color-border-dark);
   border-radius: 4px;
   cursor: pointer;
 
   &.rule-item_enabled {
-    background-color: rgba(66, 223, 34, 0.2);
-    border-color: #42df22;
+    background-color: var(--color-surface-success);
+    border-color: var(--color-success);
   }
 }
