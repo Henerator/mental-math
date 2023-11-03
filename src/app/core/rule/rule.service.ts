@@ -3,7 +3,7 @@ import { StorageService } from '@core/storage/storage.service';
 import { Observable, Subject } from 'rxjs';
 import { defaultRuleNames } from './default-rule-names.const';
 import { RuleName } from './rule-name.enum';
-import { Rule } from './rule.type';
+import { Rule } from './rule.interface';
 import { rules } from './rules.const';
 import { storageKey } from './storage-key.const';
 

@@ -10,7 +10,7 @@
     <ng-container
       *ngTemplateOutlet="
         queryContent;
-        context: { task: task, answer: task.userAnswer }
+        context: { task: task, answer: previousUserInput }
       "
     ></ng-container>
   </div>

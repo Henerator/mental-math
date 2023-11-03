@@ -1,33 +1,27 @@
-import { Rule } from './rule.type';
-import { DivAaARule } from './rules/div-aa-a.rule';
-import { DivAaaARule } from './rules/div-aaa-a.rule';
-import { MinusAaARule } from './rules/minus-aa-a.rule';
-import { MinusAaAaRule } from './rules/minus-aa-aa.rule';
-import { MinusAaaAaRule } from './rules/minus-aaa-aa.rule';
-import { MinusAaaAaaRule } from './rules/minus-aaa-aaa.rule';
-import { MulAAaRule } from './rules/mul-aa-a.rule';
-import { MulAaAaRule } from './rules/mul-aa-aa.rule';
-import { MulAaaARule } from './rules/mul-aaa-a.rule';
-import { PlusAaARule } from './rules/plus-aa-a.rule';
-import { PlusAaAaRule } from './rules/plus-aa-aa.rule';
-import { PlusAaaAaRule } from './rules/plus-aaa-aa.rule';
-import { PlusAaaAaaRule } from './rules/plus-aaa-aaa.rule';
+import { TaskOperation } from '@core/task/task-operation.enum';
+import { createRule } from './create-rule.function';
+import { RuleName } from './rule-name.enum';
+import { Rule } from './rule.interface';
 
 export const rules: Rule[] = [
-  new PlusAaARule(),
-  new PlusAaAaRule(),
-  new PlusAaaAaRule(),
-  new PlusAaaAaaRule(),
+  // plus
+  createRule(RuleName.PlusAaA, TaskOperation.plus, 1, 100, 1, 10),
+  createRule(RuleName.PlusAaAa, TaskOperation.plus, 1, 100, 1, 100),
+  createRule(RuleName.PlusAaaAa, TaskOperation.plus, 1, 1000, 1, 100),
+  createRule(RuleName.PlusAaaAaa, TaskOperation.plus, 1, 1000, 1, 1000),
 
-  new MinusAaARule(),
-  new MinusAaAaRule(),
-  new MinusAaaAaRule(),
-  new MinusAaaAaaRule(),
+  // minus
+  createRule(RuleName.MinusAaA, TaskOperation.minus, 1, 100, 1, 10),
+  createRule(RuleName.MinusAaAa, TaskOperation.minus, 1, 100, 1, 100),
+  createRule(RuleName.MinusAaaAa, TaskOperation.minus, 1, 1000, 1, 100),
+  createRule(RuleName.MinusAaaAaa, TaskOperation.minus, 1, 1000, 1, 1000),
 
-  new MulAAaRule(),
-  new MulAaAaRule(),
-  new MulAaaARule(),
+  // multiplication
+  createRule(RuleName.MulAaA, TaskOperation.mul, 2, 100, 2, 10),
+  createRule(RuleName.MulAaAa, TaskOperation.mul, 2, 100, 2, 100),
+  createRule(RuleName.MulAaaA, TaskOperation.mul, 2, 1000, 2, 10),
 
-  new DivAaARule(),
-  new DivAaaARule(),
+  // division
+  createRule(RuleName.DivAaA, TaskOperation.div, 1, 100, 2, 10),
+  createRule(RuleName.DivAaaA, TaskOperation.div, 1, 1000, 2, 10),
 ];

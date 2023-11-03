@@ -5,5 +5,4 @@ export interface Task {
   a: string;
   b: string;
   answer: string;
-  userAnswer?: string;
 }

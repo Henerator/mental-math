@@ -1,4 +1,4 @@
-import { Rule } from '@core/rule/rule.type';
+import { Rule } from '@core/rule/rule.interface';
 
 export interface RuleItem {
   rule: Rule;

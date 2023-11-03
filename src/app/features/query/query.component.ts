@@ -22,6 +22,7 @@ import { Query } from './query.interface';
 export class QueryComponent implements OnInit {
   queryState = QueryState;
 
+  previousUserInput = '';
   userInput = '';
   userError = false;
   successCount = 0;
@@ -96,14 +97,11 @@ export class QueryComponent implements OnInit {
   }
 
   private fillNextQuery(state: QueryState): void {
-    const answer =
+    this.previousUserInput =
       state === QueryState.success ? this.userInput : this.query.task.answer;
 
     this.previousQuery = {
-      task: {
-        ...this.query.task,
-        userAnswer: answer,
-      },
+      task: this.query.task,
       state,
     };
     this.query = { task: this.generateTask() };

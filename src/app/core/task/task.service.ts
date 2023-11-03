@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MathService } from '@core/math/math.service';
-import { Rule } from '@core/rule/rule.type';
+import { Rule } from '@core/rule/rule.interface';
 import { Task } from './task.interface';
 
 @Injectable({
