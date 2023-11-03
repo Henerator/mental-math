@@ -1,7 +1,10 @@
+$key-height: 40px;
+
 :host {
   display: grid;
   grid-template-columns: 3fr 1fr;
   column-gap: 4px;
+  padding: 0 4px 4px;
 }
 
 .number-keys {
@@ -9,7 +12,7 @@
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 40px);
+  grid-template-rows: repeat(4, $key-height);
   column-gap: 4px;
   row-gap: 4px;
   user-select: none;
@@ -19,7 +22,7 @@
   --color-key-bg: var(--color-virtual-keyboard-key-dark);
 
   display: grid;
-  grid-template-rows: repeat(4, 40px);
+  grid-template-rows: repeat(4, $key-height);
   row-gap: 4px;
 }
 
