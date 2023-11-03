@@ -1,0 +1,21 @@
+.sidenav-container {
+  position: absolute;
+  inset: 0;
+}
+
+.sidenav {
+  width: 400px;
+  background-color: #fff;
+}
+
+.page-content {
+  position: relative;
+  background-color: #222;
+  color: #eee;
+}
+
+.sidenav-open-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+}

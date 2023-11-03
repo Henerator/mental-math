@@ -1,0 +1,18 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav [mode]="'over'" [position]="'start'" class="sidenav">
+    Sidenav content
+  </mat-sidenav>
+
+  <mat-sidenav-content class="page-content">
+    <button
+      mat-icon-button
+      aria-label="Open sidenav"
+      class="sidenav-open-button"
+      (click)="sidenav.open()"
+    >
+      <mat-icon>settings</mat-icon>
+    </button>
+
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
