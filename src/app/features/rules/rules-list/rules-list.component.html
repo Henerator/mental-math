@@ -1,0 +1,8 @@
+<div
+  *ngFor="let item of ruleItems; trackBy: trackRuleItem"
+  [ngClass]="{ 'rule-item_enabled': item.enabled }"
+  (click)="onRuleClick(item)"
+  class="rule-item"
+>
+  {{ item.description }}
+</div>

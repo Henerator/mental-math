@@ -1,0 +1,25 @@
+:host {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  width: 100%;
+  padding: 12px;
+  font-size: 26px;
+}
+
+.rule-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  color: #222;
+  border: 2px solid #222;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &.rule-item_enabled {
+    background-color: rgba(66, 223, 34, 0.2);
+    border-color: #42df22;
+  }
+}

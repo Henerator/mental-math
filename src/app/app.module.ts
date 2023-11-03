@@ -4,8 +4,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WindowModule } from '@core/window/window.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SidenavModule } from './shared/sidenav/sidenav.module';
+import { SidenavModule } from './features/sidenav/sidenav.module';
 import { QueryModule } from './features/query/query.module';
+import { RulesModule } from './features/rules/rules.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { QueryModule } from './features/query/query.module';
     WindowModule,
     SidenavModule,
     QueryModule,
+    RulesModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

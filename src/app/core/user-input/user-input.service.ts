@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { KeyboardService } from '@core/keyboard/keyboard.service';
 import { filter, map, merge, Observable, partition, tap } from 'rxjs';
+import { keyMap } from './key-map.const';
 import { userInputCodeRegex, userInputKeyRegex } from './regex.const';
 
 @Injectable({
@@ -13,7 +14,10 @@ export class UserInputService {
     let userInput = '';
 
     const [number$, keys$] = partition(
-      this.keyboardService.listen().pipe(map((event) => event.key)),
+      this.keyboardService.listen().pipe(
+        map((event) => event.key),
+        map((key) => this.mapKey(key))
+      ),
       (key) => this.validateFloatNumberKey(key)
     );
 
@@ -46,10 +50,15 @@ export class UserInputService {
   }
 
   private validateRemoveKey(key: string): boolean {
-    return userInputCodeRegex.backspace.test(key);
+    return userInputKeyRegex.delete.test(key);
   }
 
   private validateControls(code: string): boolean {
     return userInputCodeRegex.controls.test(code);
+  }
+
+  private mapKey(key: string): string {
+    if (!keyMap.has(key)) return key;
+    return keyMap.get(key) || '';
   }
 }

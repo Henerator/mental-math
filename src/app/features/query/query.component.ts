@@ -5,6 +5,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { KeyCode } from '@core/keyboard/key-code.enum';
+import { RuleService } from '@core/rule/rule.service';
 import { Task } from '@core/task/task.interface';
 import { TaskService } from '@core/task/task.service';
 import { UserInputService } from '@core/user-input/user-input.service';
@@ -33,12 +34,23 @@ export class QueryComponent implements OnInit {
   constructor(
     private changeDetector: ChangeDetectorRef,
     private userInputService: UserInputService,
+    private ruleService: RuleService,
     private taskService: TaskService
   ) {}
 
   ngOnInit(): void {
+    this.listenRulesChange();
+
     this.fillInitialQuery();
     this.startQuery();
+  }
+
+  private listenRulesChange(): void {
+    this.ruleService.rulesChange$.subscribe(() => {
+      this.fillInitialQuery();
+      this.startQuery();
+      this.changeDetector.markForCheck();
+    });
   }
 
   private startQuery(): void {
@@ -48,6 +60,7 @@ export class QueryComponent implements OnInit {
   }
 
   private skipQuery(): void {
+    this.resetError();
     this.fillNextQuery(QueryState.error);
     this.startQuery();
   }
@@ -67,7 +80,11 @@ export class QueryComponent implements OnInit {
   }
 
   private generateTask(): Task {
-    return this.taskService.generate();
+    const enabledRules = this.ruleService.getEnabledRules();
+    const rules = enabledRules.length
+      ? enabledRules
+      : this.ruleService.getAllRules();
+    return this.taskService.generate(rules);
   }
 
   private fillInitialQuery(): void {
@@ -76,10 +93,13 @@ export class QueryComponent implements OnInit {
   }
 
   private fillNextQuery(state: QueryState): void {
+    const answer =
+      state === QueryState.success ? this.userInput : this.query.task.answer;
+
     this.previousQuery = {
       task: {
         ...this.query.task,
-        userAnswer: this.userInput,
+        userAnswer: answer,
       },
       state,
     };

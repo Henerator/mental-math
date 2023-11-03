@@ -1,6 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav [mode]="'over'" [position]="'start'" class="sidenav">
-    Sidenav content
+    <ng-content select="[sidenav]"></ng-content>
   </mat-sidenav>
 
   <mat-sidenav-content class="page-content">
