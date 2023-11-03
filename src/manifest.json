@@ -1,0 +1,30 @@
+{
+  "name": "MentalMath",
+  "short_name": "MentalMath",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#222",
+  "description": "Mental calculation practice.",
+  "icons": [
+    {
+      "src": "assets/logo-48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/logo-72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/logo-96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/logo-128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ]
+}
