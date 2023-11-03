@@ -1,0 +1,100 @@
+Installation:
+  ✔ create repository @done(23-01-03 17:17)
+  ✔ install angular material @done(23-01-03 17:17)
+
+Query page:
+  ✔ create query page @done(23-01-03 17:17)
+  ✔ create task service @done(23-01-03 17:17)
+  ✔ create task rules @done(23-01-03 17:17)
+  ✔ update query on rule change @done(23-01-03 18:37)
+  ✔ input @done(23-01-03 17:32)
+    ✔ , = . @done(23-01-03 17:32)
+    ✔ backspace = delete @done(23-01-03 17:32)
+  ✔ space action description @done(23-01-03 19:52)
+  ☐ success count
+    ✔ add count @done(23-01-03 20:34)
+    ☐ pulse animation
+    ☐ count rank
+
+Rules list:
+  ✔ rules @done(23-01-03 18:41)
+    ✔ plus @done(23-01-03 18:41)
+      ✔ xx + x @done(23-01-03 20:41)
+      ✔ xx + xx @done(23-01-03 20:35)
+      ✔ xxx + xx @done(23-01-03 20:35)
+      ✔ xxx + xxx @done(23-01-03 20:42)
+    ✔ minus @done(23-01-03 18:41)
+      ✔ xx - x @done(23-01-03 20:43)
+      ✔ xx - xx @done(23-01-03 20:35)
+      ✔ xxx - xx @done(23-01-03 20:47)
+      ✔ xxx - xxx @done(23-01-03 20:47)
+    ✔ multiplication @done(23-01-03 18:41)
+      ✔ xx x x @done(23-01-03 20:35)
+      ✔ xx x xx @done(23-01-03 20:35)
+      ✔ xxx x x @done(23-01-03 20:48)
+    ✔ division @done(23-01-03 18:41)
+      ✔ xx / x @done(23-01-03 20:35)
+      ✔ xxx / x @done(23-01-03 20:51)
+  ✔ create rules list @done(23-01-03 17:17)
+  ✔ enable rule @done(23-01-03 17:17)
+  ✔ disable rule @done(23-01-03 17:17)
+  ✔ custom scrollbar @done(23-01-03 17:18)
+  ✔ save selected rules @done(23-01-03 19:11)
+  ✔ replace border with shadow @done(23-01-06 21:38)
+  ✔ half width cards @done(23-01-06 21:38)
+  ✔ disable color (gray) @done(23-01-06 21:38)
+  ✔ replace XXX with 999 @done(23-01-06 21:38)
+
+Styles:
+  ✔ add color variables @done(23-01-04 17:48)
+  ✔ add light/dark themes @done(23-01-04 17:48)
+
+About:
+  ☐ create about page
+
+Google analytics:
+  ✔ add google analytics @done(23-01-04 18:07)
+
+Icon:
+  ✔ add application icon @done(23-01-04 19:56)
+  ☐ apple touch icon
+
+App dev information:
+  ☐ version
+
+CEO:
+  ☐ add json-ld
+    https://javascript.plainenglish.io/how-to-use-json-ld-for-advanced-seo-in-angular-63528c98bb91
+
+  ☐ test
+    https://developers.google.com/search/docs/appearance/structured-data
+
+  ☐ check google index
+    https://search.google.com/search-console/index?resource_id=sc-domain%3Adomentalmath.com
+
+Hosting:
+  Sprinthost:
+    https://cp.sprinthost.ru
+      249 руб/месяц = 2988 руб/год
+      ssl 1099 руб
+      domain 990 руб
+
+  Beget:
+    https://beget.com
+      2640 руб/год
+      domain 990 руб
+      ssl бесплатный
+
+  ✔ buy domain name @done(23-01-04 21:35)
+    domentalmath.com
+  ✔ add SSL serificate @done(23-01-04 21:36)
+  ✔ set HTTP to HTTPS redirect @done(23-01-04 21:36)
+
+Mobile:
+  ✔ keyboard @done(23-01-06 12:21)
+    ✔ add outer gap @done(23-01-06 13:49)
+  ✔ font size @done(23-01-06 12:21)
+  ✔ side nav @done(23-01-06 12:33)
+    ✔ full screen @done(23-01-06 12:21)
+    ✔ close button @done(23-01-06 12:33)
+

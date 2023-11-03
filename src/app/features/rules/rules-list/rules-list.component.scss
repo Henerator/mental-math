@@ -1,12 +1,22 @@
 @use "src/styles/device/device";
 
 :host {
-  display: flex;
-  gap: 12px;
-  flex-direction: column;
+  display: block;
   width: 100%;
   padding: 12px;
-  font-size: 26px;
+  font-size: 20px;
+  line-height: 22px;
+}
+
+.rule-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 12px;
+  row-gap: 12px;
+
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
 }
 
 .rule-item {
@@ -15,15 +25,39 @@
   align-items: center;
   justify-content: center;
   padding: 12px;
-  color: var(--color-text-dark);
-  border: 3px solid var(--color-border-dark);
+  color: var(--color-disabled);
   border-radius: 4px;
+  box-shadow: 0 0 1px var(--color-disabled);
   cursor: pointer;
+  transition: font-size 300ms ease;
+
+  &:hover {
+    box-shadow: 0 0 3px var(--color-disabled);
+  }
 
   &.rule-item_enabled {
+    color: var(--color-text-dark);
     background-color: var(--color-surface-success);
-    border-color: var(--color-success);
+    box-shadow: 0 0 1px 0 var(--color-surface-success);
+
+    &:hover {
+      box-shadow: 0 0 3px 0 var(--color-surface-success);
+    }
   }
+}
+
+.rule-item__operator {
+  margin-right: 12px;
+}
+
+.rule-item__ab {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.rule-item__value {
+  text-align: right;
 }
 
 @include device.for-mobile {

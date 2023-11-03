@@ -1,8 +1,17 @@
 <div
-  *ngFor="let item of ruleItems; trackBy: trackRuleItem"
-  [ngClass]="{ 'rule-item_enabled': item.enabled }"
-  (click)="onRuleClick(item)"
-  class="rule-item"
+  *ngFor="let group of ruleGroups; trackBy: trackRuleItemGroup"
+  class="rule-group"
 >
-  {{ item.description }}
+  <div
+    *ngFor="let item of group.rules; trackBy: trackRuleItem"
+    [ngClass]="{ 'rule-item_enabled': item.enabled }"
+    (click)="onRuleClick(item)"
+    class="rule-item"
+  >
+    <div class="rule-item__operator">{{ item.description.operation }}</div>
+    <div class="rule-item__ab">
+      <span class="rule-item__value">{{ item.description.a }}</span>
+      <span class="rule-item__value">{{ item.description.b }}</span>
+    </div>
+  </div>
 </div>

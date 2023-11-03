@@ -28,6 +28,7 @@ export function createRule(
 
   return {
     name,
+    operation,
     getTask: () => {
       const a = MathService.getRandomInt(minA, maxA);
       const b = MathService.getRandomInt(minB, maxB);

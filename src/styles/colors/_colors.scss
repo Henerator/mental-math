@@ -15,6 +15,8 @@ html {
 
   --color-virtual-keyboard-key: #444;
   --color-virtual-keyboard-key-dark: #333;
+
+  --color-disabled: #bbb;
 }
 
 html.theme-light {
@@ -34,4 +36,6 @@ html.theme-light {
 
   --color-virtual-keyboard-key: #eee;
   --color-virtual-keyboard-key-dark: #eee;
+
+  --color-disabled: #bbb;
 }
